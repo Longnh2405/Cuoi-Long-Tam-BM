@@ -15,12 +15,20 @@ function Infomation({
   time = {},
   address = "",
   street = "",
+  map = "",
+  mapUrl = "",
   phone = "",
 }) {
   const boxRef = useRef();
   const boxInView = useInView(boxRef, { once: true });
   const hasPhone = Boolean(phone && String(phone).trim());
-  const hasStreet = Boolean(street && String(street).trim());
+  const mapLink =
+    (map && String(map).trim()) ||
+    (mapUrl && String(mapUrl).trim()) ||
+    (street && String(street).trim()
+      ? `https://maps.google.com/?q=${encodeURIComponent(String(street).trim())}`
+      : "");
+  const hasStreet = Boolean(mapLink);
   const hasAddress = Boolean(address && String(address).trim());
 
   return (
@@ -71,7 +79,7 @@ function Infomation({
       {hasStreet && (
         <a
           className={cx("btn")}
-          href={`http://maps.google.com/?q=${encodeURIComponent(String(street).trim())}`}
+          href={mapLink}
           target="_blank"
           rel="noreferrer"
         >

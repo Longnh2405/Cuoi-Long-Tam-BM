@@ -54,6 +54,7 @@ function Invitation({ isGai = false }) {
             time={wedInfo.time}
             address={wedInfo.address}
             street={wedInfo.street}
+            map={wedInfo.map}
             phone={wedInfo.phone}
             posision={wedInfo.posision}
           />
