@@ -16,6 +16,10 @@ function Intro({ handleOpen, name = "Bạn", isGai = false }) {
     ? introSection.groomFirstLetter
     : introSection.brideFirstLetter;
 
+  const senderParents = isGai
+    ? introSection.brideParents
+    : introSection.groomParents;
+
   return (
     <div className={cx("wrapper")} ref={ref}>
       <div className={cx("block-wrapper")}>
@@ -46,8 +50,14 @@ function Intro({ handleOpen, name = "Bạn", isGai = false }) {
                 </h3>
               </div>
 
+              {senderParents && (
+                <div className={cx("sender-box")}>
+                  <p className={cx("sender-label")}>Trân trọng kính mời</p>
+                </div>
+              )}
+
               <div className={cx("dear-box")}>
-                <p className={cx("dear")}>Thân mời : </p>
+                <p className={cx("dear")}>Kính gửi : </p>
                 <span className={cx("dear-name")}>{name}</span>
               </div>
             </div>

@@ -13,11 +13,13 @@ function Invitation({ isGai = false }) {
   const imgs = invitationSection.imgs || [];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const list = isGai ? [...weddingInfo].reverse() : weddingInfo;
+  // Nhà gái: hiển thị Dự tiệc + Vu Quy + Thành Hôn (đảo thứ tự vu quy lên trước)
+  // Nhà trai: hiển thị Thành Hôn + Vu Quy (bỏ dự tiệc nhà gái)
+  const list = isGai ? [...weddingInfo].reverse() : weddingInfo.filter((w) => !w.title.includes("DỰ TIỆC"));
   return (
     <div className={cx("wrapper")}>
       <h2 className={cx("title")}>Invitation</h2>
-      <p className={cx("des")}>Đến dự đám cưới của chúng mình</p>
+      <p className={cx("des")}>Trân trọng kính mời đến ngày vui của con chúng tôi</p>
       <div className={cx("img-list")} ref={ref}>
         <div
           className={cx("img-wrap")}
@@ -43,7 +45,7 @@ function Invitation({ isGai = false }) {
           <img className={cx("img")} src={imgs[2]} alt="wedding" loading="lazy" decoding="async" />
         </div>
       </div>
-      <Days title="Tháng 11" activeDay={invitationSection.activeDay} />
+      <Days title="Tháng 11" activeDay={invitationSection.activeDay} activeDays={invitationSection.activeDays} />
       <div className={cx("cards-container")}>
         {list.map((wedInfo, index) => (
           <Infomation

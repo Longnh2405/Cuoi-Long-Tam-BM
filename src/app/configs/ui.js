@@ -47,6 +47,20 @@ const weddingInfo = [
     phone: "",
     posision: "bottom left",
   },
+  {
+    title: "DỰ TIỆC (NHÀ GÁI)",
+    time: {
+      date: "28/11",
+      year: "2026",
+      time: "16:00",
+      full: "Thứ bảy, Ngày 28 Tháng 11 năm 2026",
+    },
+    address: "Nhà văn hóa tổ dân phố Phượng Đồng, phường Chương Mỹ, Hà Nội",
+    street: "Nhà văn hóa tổ dân phố Phượng Đồng, phường Chương Mỹ, Hà Nội",
+    map: "https://maps.app.goo.gl/zHakoV2UWP2i876o6?g_st=ac",
+    phone: "",
+    posision: "bottom left",
+  },
 ];
 
 // November 2026
@@ -90,6 +104,15 @@ const introSection = {
   mainImage: weddingImg("DSC01588.jpg"),
   groomFirstLetter: "L",
   brideFirstLetter: "T",
+  // Người gửi thiệp
+  groomParents: {
+    father: "Nguyễn Viết Đông",
+    mother: "Nguyễn Thị Miền",
+  },
+  brideParents: {
+    father: "Bùi Quang Huy",
+    mother: "Trần Thị Thanh Mỵ",
+  },
 };
 
 // profile section
@@ -100,16 +123,16 @@ const profileSection = {
     {
       title: "groom",
       name: "Nguyễn Hải Long",
-      // father: "Nguyễn Viết Đông",
-      // mother: "Nguyễn Thị Miền",
+      father: "Nguyễn Viết Đông",
+      mother: "Nguyễn Thị Miền",
       avatar: weddingImg("DSC01782.jpg"),
       images: [weddingImg("DSC01803.jpg"), weddingImg("DSC01426.jpg")],
     },
     {
       title: "bride",
       name: "Bùi Minh Tâm",
-      // father: "Bùi Quang Huy",
-      // mother: "Trần Thị Thanh Mỵ",
+      father: "Bùi Quang Huy",
+      mother: "Trần Thị Thanh Mỵ",
       avatar: weddingImg("DSC01356.jpg"),
       images: [weddingImg("DSC01825.jpg"), weddingImg("DSC02024.jpg")],
     },
@@ -124,6 +147,7 @@ const invitationSection = {
     weddingImg("DSC01645.jpg"),
   ],
   activeDay: 29,
+  activeDays: [28, 29],
 };
 
 // album section
@@ -152,17 +176,12 @@ const guestbookSection = {
 const giftSection = {
   image: weddingImg("DSC01913.jpg"),
   brideBank: {
-    name: "BÙI MINH TÂM",
-    bankName: "TPBank",
-    qr: "https://img.vietqr.io/image/TPB-00003631580-compact2.png?accountName=BUI%20MINH%20TAM",
-    bankNumber: "00003631580",
+    name: "BÙI QUANG HUY",
+    bankName: "MB Bank",
+    qr: "https://img.vietqr.io/image/MB-0300103663001-compact2.png?accountName=BUI%20QUANG%20HUY",
+    bankNumber: "0300103663001",
   },
-  groomBank: {
-    name: "NGUYỄN HẢI LONG",
-    bankName: "TPBank",
-    qr: "https://img.vietqr.io/image/TPB-03928593401-compact2.png?accountName=NGUYEN%20HAI%20LONG",
-    bankNumber: "03928593401",
-  },
+  groomBank: null,
 };
 
 // timer

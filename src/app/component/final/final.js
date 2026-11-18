@@ -22,10 +22,10 @@ function Final() {
         </div>
       </div>
       <PaperText className={cx("des")}>
-        Chúng tôi vô cùng biết ơn tình cảm và sự ủng hộ của bạn trong suốt thời
-        gian qua. Để kỷ niệm ngày hai chúng tôi nên duyên vợ chồng xin kính mời
-        bạn cùng gia đình đến dự lễ cưới của chúng tôi. Sự hiện diện của bạn là
-        niềm vinh dự lớn cho chúng tôi trong ngày hạnh phúc này.
+        Gia đình chúng tôi vô cùng biết ơn tình cảm và sự ủng hộ của quý khách trong suốt thời
+        gian qua. Nhân ngày vui thành hôn của con chúng tôi, xin trân trọng kính mời
+        quý khách cùng gia đình đến dự lễ cưới của con chúng tôi. Sự hiện diện của quý khách là
+        niềm vinh dự lớn cho gia đình chúng tôi trong ngày hạnh phúc này.
       </PaperText>
     </div>
   );

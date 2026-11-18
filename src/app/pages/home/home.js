@@ -21,7 +21,7 @@ const cx = classNames.bind(styles);
 export default function Home() {
   const searchParams = useSearchParams();
   const name = searchParams.get("name") || "You";
-  const isGai = false;
+  const isGai = true;
 
   const [isOpen, setIsOpen] = useState(searchParams.get("open") === "1");
 

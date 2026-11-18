@@ -62,13 +62,13 @@ function Gift({ onClose, isGai = false }) {
     return null;
   }
 
-  const currentBank = activeBank === "bride" ? brideBank : groomBank;
-  const targetLabel = activeBank === "bride" ? "Cô dâu" : "Chú rể";
+  const currentBank = activeBank === "bride" ? brideBank : activeBank === "groom" ? groomBank : null;
+  const targetLabel = "";
 
   return (
     <div className={cx("wrapper")}>
       <div className={cx("header")}>
-        <p className={cx("text")}>Mừng cưới</p>
+        <p className={cx("text")}>Mừng quà</p>
       </div>
 
       <div className={cx("content")}>
@@ -87,70 +87,24 @@ function Gift({ onClose, isGai = false }) {
         </p>
 
         <div className={cx("gift-actions")}>
-          {isGai ? (
-            <>
-              {hasBride && (
-                <button
-                  type="button"
-                  className={cx(
-                    "gift-action-btn",
-                    activeBank === "bride" && "active"
-                  )}
-                  onClick={() => handleSelectBank("bride")}
-                >
-                  <FaGift className={cx("gift-icon")} />
-                  Tặng quà cô dâu
-                </button>
+          {hasBride && (
+            <button
+              type="button"
+              className={cx(
+                "gift-action-btn",
+                activeBank === "bride" && "active"
               )}
-              {hasGroom && (
-                <button
-                  type="button"
-                  className={cx(
-                    "gift-action-btn",
-                    activeBank === "groom" && "active"
-                  )}
-                  onClick={() => handleSelectBank("groom")}
-                >
-                  <FaGift className={cx("gift-icon")} />
-                  Tặng quà chú rể
-                </button>
-              )}
-            </>
-          ) : (
-            <>
-              {hasGroom && (
-                <button
-                  type="button"
-                  className={cx(
-                    "gift-action-btn",
-                    activeBank === "groom" && "active"
-                  )}
-                  onClick={() => handleSelectBank("groom")}
-                >
-                  <FaGift className={cx("gift-icon")} />
-                  Tặng quà chú rể
-                </button>
-              )}
-              {hasBride && (
-                <button
-                  type="button"
-                  className={cx(
-                    "gift-action-btn",
-                    activeBank === "bride" && "active"
-                  )}
-                  onClick={() => handleSelectBank("bride")}
-                >
-                  <FaGift className={cx("gift-icon")} />
-                  Tặng quà cô dâu
-                </button>
-              )}
-            </>
+              onClick={() => handleSelectBank("bride")}
+            >
+              <FaGift className={cx("gift-icon")} />
+              Mừng quà
+            </button>
           )}
         </div>
 
         {activeBank && currentBank && (
           <div className={cx("qr-container")} ref={qrRef}>
-            <p className={cx("target-title")}>Mừng cưới {targetLabel}</p>
+            <p className={cx("target-title")}>Mừng quà</p>
             <p className={cx("scan-hint")}>
               Quét mã QR bằng ứng dụng ngân hàng để chuyển khoản
             </p>
@@ -164,7 +118,7 @@ function Gift({ onClose, isGai = false }) {
                 >
                   <img
                     src={String(currentBank.qr).trim()}
-                    alt={`Mã QR ${targetLabel}`}
+                    alt={`Mã QR mừng quà`}
                     className={cx("qr-code-img")}
                     loading="lazy"
                     decoding="async"

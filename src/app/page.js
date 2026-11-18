@@ -6,7 +6,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
 
   const name = searchParams.name || "Bạn";
-  const mainTitle = "Thiệp Cưới Hải Long & Minh Tâm | Lễ Thành Hôn";
+  const mainTitle = "Thiệp Cưới Hải Long & Minh Tâm | Lễ Vu Quy";
 
   return {
     title: `${mainTitle} - Kính mời ${name}`,

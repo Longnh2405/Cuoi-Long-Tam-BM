@@ -73,7 +73,7 @@ function GuestBook({ fName, isGai = false }) {
       setWish("");
       setWillArrive(null);
       setActive(true);
-      alert("Cảm ơn bạn đã gửi lời chúc mừng tới cô dâu & chú rể!");
+      alert("Cảm ơn bạn đã gửi lời chúc mừng!");
     };
 
     if (WISH_API_LINK) {
