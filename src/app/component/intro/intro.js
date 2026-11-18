@@ -56,10 +56,10 @@ function Intro({ handleOpen, name = "Bạn", isGai = false }) {
                 </div>
               )}
 
-              <div className={cx("dear-box")}>
+            {/* <div className={cx("dear-box")}>
                 <p className={cx("dear")}>Kính gửi : </p>
                 <span className={cx("dear-name")}>{name}</span>
-              </div>
+              </div> */}
             </div>
 
             <motion.button
