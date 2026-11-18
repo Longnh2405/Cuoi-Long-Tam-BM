@@ -19,7 +19,7 @@ function Invitation({ isGai = false }) {
   return (
     <div className={cx("wrapper")}>
       <h2 className={cx("title")}>Invitation</h2>
-      <p className={cx("des")}>Trân trọng kính mời đến ngày vui của con chúng tôi</p>
+      <p className={cx("des")}>Trân trọng kính mời đến dự ngày vui của con chúng tôi</p>
       <div className={cx("img-list")} ref={ref}>
         <div
           className={cx("img-wrap")}
